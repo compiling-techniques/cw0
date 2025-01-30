@@ -17,12 +17,14 @@ In this coursework, we want to familiarize you with the testing process in xDSL 
 
 We will be working with xDSL version v0.24.0 for all of the courseworks this year. We also recommend Python version 3.10.
 
+**Note:** The following instructions outline installation for UNIX-based systems (Linux, MacOS). Windows itself is not supported for this coursework. If your primary machine runs Windows only, please consider using the DICE machines avaialble in Appleton Tower or the Windows Subsystem for Linux (WSL) on your local machine. 
+
 ### Python 3.10 installation
 **If you are using DICE, feel free to skip this step, as Python3.10 is the default Python version installed on all DICE machines.**
 
-Official [Python3.10.11 documentation](https://www.python.org/downloads/release/python-31011/) provides all of the necessary GUI installers for MacOS and Windows. 
+<!-- Official [Python3.10.11 documentation](https://www.python.org/downloads/release/python-31011/) provides all of the necessary GUI installers for MacOS.  -->
 
-Additionally, Python3.10 should be available to download through the package manager of your respective Linux distributions, as well as through [Homebrew](https://brew.sh) on MacOS. 
+Python3.10 should be available to download through the package manager of your respective Linux distributions, as well as through [Homebrew](https://brew.sh) on MacOS. 
 
 After installing Python 3.10, you can verify your installation by running the following command. 
 ```bash
@@ -32,7 +34,12 @@ $ which python3.10
 
 ### xDSL v0.24.0 repository clone
 
-First, you will need to **clone** xDSL. If you used GitHub before, you will already have either an HTTPS access token, or an SSH key. If you do not have either, you will need to create this. You can use either, just follow the guides below:
+First, you will need to **clone** xDSL. 
+
+---
+#### If 'git' is not set-up on your machine
+
+If you used 'git' with GitHub before, you will already have either an HTTPS access token, or an SSH key, if that is the case feel free to skip this part and go to [the section just below](#if-git-is-set-up-on-your-machine). If you do not have either, you will need to create this. You can use either, just follow the guides below:
   - To create an SSH key, use [this](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
   - To create an HTTPS token, use [this](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token).
     At some point, you will be asked to specify what you want to do with the token: feel free to tick all the boxes.
@@ -62,7 +69,38 @@ Run the following commands to change the version of xDSL:
 /path/to/xdsl$ git branch # verify that the branch has indeed been switched to v0.24.0, can escape the screen by pressing 'q'
 ```
 
+---
+#### If 'git' is set-up on your machine
+
+In case you already have 'git' on your machine connected to your GitHub account, simply clone the xDSL repo and change the version:
+
+```bash
+# if you used HTTPS token to set up git, use the command
+/path/to$ git clone https://github.com/xdslproject/xdsl.git
+
+# if you used SSH key to set up git, use the command
+/path/to$ git clone git@github.com:xdslproject/xdsl.git
+
+/path/to$ cd xdsl
+
+/path/to/xdsl$ git checkout v0.24.0 # switching branches to the xDSL version 0.24.0
+
+/path/to/xdsl$ git branch # verify that the branch has indeed been switched to v0.24.0, can escape the screen by pressing 'q'
+```
+
+---
+
 ## Python Environment Set-up 
+
+### Choice of an IDE
+
+`PyCharm` is a popular choice for an IDE for Python, and it comes pre-installed in your DICE desktop environment.
+
+If you decide to use `PyCharm`, in order to install the packages, you should open the embedded terminal (`Alt+F12` by default) and continue with the following instructions of the environment set-up.
+
+**Note:** It is important to note here, that the choice of an IDE does not affect your ability to complete the coursework, and the following instructions can be completed entirely in your terminal.
+
+### Python Environment Set-up 
 
 You can create an isolated python environment using [venv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment).
 To set up `venv` for the assignment, follow the steps below (a summary is given below the bulleted list):
@@ -92,18 +130,10 @@ In summary, the process looks as follows:
 
 (env) /path/to/xdsl$ pip install -U -r requirements.txt # install dependencies
 
-(env) /path/to/xdsl$ pip install -e . # install ChocoPy as a package
+(env) /path/to/xdsl$ pip install -e . # install xdsl as a package (locally in the environment)
 
 (env) /path/to/xdsl$ # get to hacking, and best of luck! :)
 ```
-
-#### PyCharm
-
-It would be convenient for you, if you used a modern IDE for Python.
-A popular choice, `PyCharm`, comes pre-installed in your DICE desktop environment.
-
-If you decide to use `PyCharm`, in order to install the packages, you should open the embedded terminal (`Alt+F12` by default)
-and follow the previous instructions using `pip install -U -r requirements.txt`.
 
 #### Using GitHub code spaces
 
