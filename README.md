@@ -17,7 +17,7 @@ In this coursework, we want to familiarize you with the testing process in xDSL 
 
 We will be working with xDSL version v0.24.0 for all of the courseworks this year. We also recommend Python version 3.10.
 
-The following instructions outline installation for UNIX-based systems (Linux, MacOS). Windows itself is not supported for this coursework. If your primary machine runs Windows only, please consider using the DICE machines avaialble in Appleton Tower or the Windows Subsystem for Linux (WSL) on your local machine. 
+**Note:** The following instructions outline installation for UNIX-based systems (Linux, MacOS). Windows itself is not supported for this coursework. If your primary machine runs Windows only, please consider using the DICE machines avaialble in Appleton Tower or the Windows Subsystem for Linux (WSL) on your local machine. 
 
 ### Python 3.10 installation
 **If you are using DICE, feel free to skip this step, as Python3.10 is the default Python version installed on all DICE machines.**
